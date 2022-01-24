@@ -1,6 +1,6 @@
 #!/bin/bash
-TYPE="retro-terminal"
-THEME="green.css"
+TYPE="alien"
+THEME="hallway2.css"
 DOMAIN="theme-park.dev" #if you update the domain after the script has been run, You must disable and re enable JS or the whole theme.  
 ADD_JS="true"
 JS="custom_text_header.js"
@@ -30,14 +30,14 @@ fi
 case ${DOMAIN} in
   *"github.io"*)
   echo "Switching to github.io URL style"
-    DOMAIN="${DOMAIN}\/theme.park"
+    DOMAIN="GilbN/theme.park"
     ;;
 esac
 
 # Adding stylesheets
 if ! grep -q ${DOMAIN} /usr/local/emhttp/login.php; then
   echo "Adding stylesheet"
-  sed -i -e "\@<style>@i\    <link rel='stylesheet' href='https://${DOMAIN}/css/addons/unraid/login-page/${TYPE}/${THEME}'>" /usr/local/emhttp/login.php
+  sed -i -e "\@<style>@i\    <link rel='stylesheet' href='https://GilbN/css/addons/unraid/login-page/${TYPE}/${THEME}'>" /usr/local/emhttp/login.php
   echo 'Stylesheet set to' ${THEME}
 fi
 
